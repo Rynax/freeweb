@@ -1,0 +1,186 @@
+﻿@charset "utf-8";
+/* 全局样式 */
+#erpwrap{ padding:0; margin:0 auto;}
+#erpcontentw{ padding-bottom:10px; position:relative;}
+.leftnavcon{ width:185px; float:left;}
+.wraperpcontentpo{width:100%;}
+.wraperpcontent{ margin-left:185px;}
+
+/*内容编辑区域*/
+#erpcontent{ margin:0 auto; padding:0;}
+
+/*编辑区域内容结构*/
+.i-erpcontent{/*overflow-x:hidden;*/}
+.i-erpconA{ padding:20px 0 0 20px;}
+
+/*input--风格一*/
+.form-group-con-1{margin-bottom:12px; float:left; width:100%;}
+.control-label-1{ width:20%; text-align:right; float:left; padding-top:8px;}
+.form-group-input-1{ width:80%; float:left;}
+.control-input-w1{}
+.control-input-1{ border:none; vertical-align:middle;}
+.control-input-w1 .control-input-1,.select-option-1,.Choice-p,.bor-textarea-1{ padding:4px 4px; font-size:14px; color:#555; background-color:#fff; border:1px solid #ccc; border-radius:4px; -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075); box-shadow: inset 0 1px 1px rgba(0,0,0,.075); -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;vertical-align:middle; }
+.form-button-1{ float:left; width:20%;}
+
+
+/*公司信息设置*/
+.erpcon-List-1{ padding-top:30px; padding-bottom:30px;}
+
+/*组织机构设置*/
+/*组织机构菜单*/
+.i-erpcon-nav-a{ border:solid 1px #ccc; background:#f6f6f6; padding:10px; overflow:auto;}
+.i-erpcon-nav-a ul{}
+.i-erpcon-navc-a{ width:230px; float:left;}
+.i-erpcon-navul-a-1 li a,.i-erpcon-navul-a-2 li a,.i-erpcon-navul-a-3 li a{ line-height:25px; height:25px;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;word-wrap: normal; }
+.i-erpcon-navul-a-1 li a{font-size:14px;}
+.i-erpcon-navul-a-2,.i-erpcon-navul-a-3{ padding-left:15px;}
+.i-erpcon-navul-a-2 li a{ font-size:13px;}
+.i-erpcon-navul-a-3 li a{ font-size:12px;}
+.i-erpcon-navul-a-1 li a.active{ color:#428bcb; display:block;}
+/*------*/
+.erpcon-List-2{}
+
+/*商品品牌设置*/
+/*搜索*/
+.i-search-w1{}
+.i-search-inputw1{ border:solid 1px #4486d6; padding:6px; border-radius:4px;}
+.LogDate-search-inp{ border:solid 1px #4486d6; padding:0 6px; border-radius:4px; height:35px; line-height:28px;}
+.i-search-inputw1 input{ width:100%;}
+/*商品规格设置*/
+.erpSpec-fit{ padding:10px; border:solid 1px #aaa;}
+/*商品管理*/
+.erpcon-List-3{}
+.Operation-item-top1{ background:#ededed; border:solid 1px #ccc; padding:6px 10px;}
+.i-table-bor1{ border:solid 1px #aaa;}
+
+
+/*表格*/
+.i-table-tr1{ height:50px;word-break: keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.i-table-tr2{ height:36px;word-break: keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.i-table-tr1 td{ padding:0 5px; border:1px #ccc solid;}
+.i-table-tr2 td{ padding:0 5px;border:1px #ccc solid;}
+.i-table-tr1 th{ padding:0 5px;border:1px #ccc solid;}
+.i-table-tr2 th{ padding:0 5px;border:1px #ccc solid;}
+/* 分页 */
+.page{ height:70px; line-height:60px; color:#333; text-align:center;}
+.page a{ color:#333; padding:4px 8px; border:1px solid #d7d7d7;}
+.page a:hover/*,.page .active*/{ color:#fff; background:#4486d6; padding:5px 9px; border:none;}
+.page .text{ width:26px; height:21px; line-height:21px; border:1px solid #e1e1e1; color:#333; text-align:center;}
+.page .btn{ width:48px; height:27px; background:#4486d6; color:#fff; line-height:27px; text-align:center; border:none; cursor:pointer;}
+.page .btn:hover{ background:#3297fd;}
+.pagination {overflow:auto; margin: 0 auto; width:100%;}
+.pagination li { display:inline-block; margin:0 2px; }
+.pagination li span{padding: 4px 8px; border:1px solid #d7d7d7; background:#f2f2f2; color:#999;}
+.pagination li span:hover{border: solid 1px #ccc;}
+.pagination li.active a{color:#fff; background:#4486d6; padding:5px 9px; border:none;}
+
+
+/*操作日志管理*/
+.Log-management{ height:35px; line-height:35px;}
+/*日历*/
+.ipticon {background: url(../js/date/date_icon.gif) 98% 50% no-repeat;}
+
+.erpRefresh{ position:absolute; right:10px; top:0; cursor:pointer;}
+/*商品管理*/
+.control-abs{ position:absolute; background:#fff; border:1px #ccc solid; top:28px;left:0; width:100%; padding:0 0 5px 0;}
+.control-abs h2{ margin:0 5px; border-bottom:1px #ccc solid; line-height:30px; padding:0 5px;}
+.control-abs ul li{ float: left; width:32%; padding:5px 0 0px 1%;}
+
+
+
+/* 供应商档案 */
+.topmargin{
+	margin-top:3px;}
+.topmargino{
+	margin-top:5px;}
+.w330{width:334px;}
+.w550{
+	width:560px;}
+.i-erpcon-navc-a-tc{
+	width:150px;
+	float:left;}
+.ml160{
+	margin-left:160px;}
+	/* 采退单管理 */
+.erpcaitui{
+	padding:10px 0;}
+.erpcaitui-left{}
+.caitui span{
+	display:block;
+	float:left;
+	line-height:30px;}
+.caitui span{
+	display:block;
+	height:30px;
+	}
+/* 商品管理 */
+
+.add-attr{
+	height:140px;
+	overflow-x:hidden;
+	overflow-y:auto;}
+.att-title{ border-bottom:1px #ddd solid; height:26px; line-height:26px;margin-bottom:3px;}
+
+
+.customAttrChild{
+	position:absolute; width: 70%;background:#fff; border:1px #ccc solid; top:44px;left:0; z-index:90;background: url("../images/z_smallcitym.png");box-shadow:2px 2px 2px #ccc;clear:both;
+	height:200px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	}
+
+
+.input-class01{
+  padding: 3px 3px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;}
+
+/*tab切换*/
+.tab_ul{margin-left:1px;}
+.tab_ul li{ float:left; padding:0 10px; min-width:120px; text-align:center; line-height:30px;margin-bottom:10px; border:1px #4486d6 solid; cursor:pointer; background:#fff;margin-left:-1px;}
+.tab_ul li.active{ background:#4486d6; color:#fff;}
+
+
+/*快递包裹追踪*/
+.status-box {position: relative;margin:20px; overflow: hidden;}
+.status-list {margin-top: -9px;margin-bottom: -9px;padding-left: 10px;line-height: 30px;}
+.status-list li {height: auto;min-height: 30px;border-left: 1px solid #d9d9d9;}
+.status-list .date, .status-list .week, .status-list .time {display: inline-block;}
+.status-list .date {width: 78px;font-weight: 700;margin-right: 8px;font-family: Arial;}
+.status-list .week {width: 32px;font-weight: 700;}
+.status-list .time {width: 48px;margin-right: 28px;margin-left: 5px;}
+.status-list .text {width: 653px;vertical-align: text-top;line-height: 1.3em;}
+.status-list .hidden {visibility: hidden;}
+.status-list li:before {content: '';border: 3px solid #f3f3f3;background-color: #d9d9d9;display: inline-block;width: 5px;height: 5px;border-radius: 5px;margin-left: -6px;margin-right: 10px;}
+.status-list .latest:before {background-color: #fe4300;border-color: #f8e9e4;}
+/*运费模板*/
+.yfmb-multiple{border:1px #ccc solid; border-radius:4px; width:180px; height:170px; padding:5px;}
+/*系统订单模板配置*/
+.selectbox{}
+.selectbox div{float:left;}
+.selectbox .select-bar{}
+.selectbox .select-bar select{display: block;
+    width: 200px;
+    height: 300px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.btn-bar{ margin:0 20px;}
+.btn-bar p{margin-top:16px;}
+.btn-bar p span{ display:block; text-align:center; vertical-align:middle; line-height:30px;width:50px;height:30px;cursor:pointer;font-family:simsun;font-size:14px; background:#ddd; border-radius:4px; font-weight:400; width:140px;    box-shadow: inset 0 2px 4px rgba(0,0,0,.1);}
+.btn-bar p span:hover{ background:#e1e1e1;}
+
+

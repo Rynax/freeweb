@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主框架</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="font/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+        $(function () {
+            //弹出修改密码
+            clickShow($('#modify-password'), [$('.bgdiv'), $('#password-pp')]);
+            //点击关闭修改密码
+            clickClose($('#password-close'), [$('.bgdiv'), $('#password-pp')]);
+
+            //点击取消修改密码
+            clickClose($('#password-cancel'), [$('.bgdiv'), $('#password-pp')]);
+
+
+        });
+        
+        $(function(){
+			$.ajax({
+				type: "POST",
+				url: "user.do",
+				success: function(json){
+					alert(json);
+				}
+			});
+		});
+
+
+    </script>
+</head>
+<body>
+    <div class="erp_header">
+        <div id="header">
+            <h1><img src="images/logo.png" alt="英特华ERP图书"></h1>
+            <div class="myAccount">
+                <ul>
+                    <li class="username_down">
+                        <a href="#"><!--a在标签上加 class="active"为选中，修改密码同样--><i class="fa fa-user"></i>下午好<span class="ml10">张三</span><i class="fa fa-sort-desc ml5 display-i"></i></a>
+                        <div class="Modify-pd"><a href="javascript:void(0)" id="modify-password">修改密码</a></div>
+                    </li>
+                    <li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
+                    <li class="help_down">
+                        <a href="#">帮助<i class="fa fa-sort-desc ml5 display-i"></i></a>
+                        <ol class="top_drop">
+                            <li><a href="#">操作手册</a></li>
+                            <li><a href="#">更新日志</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                            <li><a href="#">关于</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="left_back"> </div>
+    <div class="left_cd">
+        <div class="leftnav_h3">
+            <h3><i class="fa fa-qrcode fa-lg fa-fw"></i>菜单功能</h3>
+        </div>
+    </div>
+    <div class="erp_left">
+        <div id="leftnav">
+            <div class="leftnav-cA">
+                <ul>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-archive fa-lg fa-fw"></i>客户管理<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li>
+                                    <a href="customerinfo.html" target="mainFrame">客户明细<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>项目管理<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="ProjectInfo.html" target="mainFrame-zd-tb">项目明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>三级目录<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="ProjectCorrelation.html" target="mainFrame-zd-tb">三级明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>合同信息<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="ContractInfo.html" target="mainFrame-zd-tb">信息明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>通讯录信息<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="ContactsInfo.html" target="mainFrame-zd-tb">通讯录明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>回款信息<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="PaymentInfo.html" target="mainFrame-zd-tb">回款明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-hospital-o fa-lg fa-fw"></i>发票信息<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="InvoiceInfo.html" target="mainFrame-zd-tb">发票明细</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-truck fa-lg fa-fw"></i>物流管理<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="快递公司管理.html" target="mainFrame-wl-gs">快递公司管理</a> </li>
+                                <li><a href="快递单号管理.html" target="mainFrame-wl-dh">快递单号管理</a> </li>
+                                <li><a href="可到地设置.html" target="mainFrame-wl-kdd">可到地设置</a> </li>
+                                <li><a href="运费模板.html" target="mainFrame-wl-yf">运费模板</a> </li>
+                                <li><a href="选择快递公司.html" target="mainFrame-wl-xz">选择快递公司</a> </li>
+                                <li><a href="快递运费到帐.html" target="mainFrame-wl-yfdz">快递运费到帐</a> </li>
+                                <li><a href="快递包裹追踪.html" target="mainFrame-wl-bg">快递包裹追踪</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-male fa-lg fa-fw"></i>人员管理<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="账号管理.html" target="mainFrame-ry-zh">账号管理</a> </li>
+                                <li><a href="角色管理.html" target="mainFrame-ry-js">角色管理</a> </li>
+                                <li><a href="人员信息管理.html" target="mainFrame-ry-ry">人员信息管理</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="mainFrame"><i class="fa fa-cog fa-lg fa-fw"></i>系统配置<i class="fa fa-angle-right fa-lg posab-r posab-t12"></i></a>
+                        <div class="leftnav-cB" style="display:none">
+                            <ul>
+                                <li><a href="操作日志管理.html" target="mainFrame-xt-rz">操作日志管理</a> </li>
+                                <li><a href="系统默认配置.html" target="mainFrame-xt-mr">系统默认配置</a> </li>
+                                <li><a href="系统订单模板配置.html" target="mainFrame-xt-dd">系统订单模板配置</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="erp_nav">
+        <div class="erp-con-navA">
+            <div class="erp-con-nav-oh">
+                <ul class="erp-con-nav-ul">
+                    <li class="active"><a href="javacript:void(0)"><i class="fa fa-home fa-lg mr5"></i>首页</a></li>
+                    <!-- <li><a href="#">公司信息设置<i class="fa fa-times"></i></a></li>-->
+                </ul>
+            </div>
+            <div class="nav-left-button" style="display:none;"><i class="fa fa-arrow-left il"></i></div>
+            <div class="nav-right-button" style="display:none;"><i class="fa fa-arrow-right ir"></i></div>
+            <div class="erpRefresh"> <a onclick="reFresh()"><i class="fa fa-refresh fa-lg"></i></a> </div>
+        </div>
+    </div>
+    <div class="erp_right">
+        <iframe src="home.html" width="100%" height="100%" nocheckframe="true" name="mainFrame" frameborder="no" scrolling="auto" hidefocus="">11</iframe>
+    </div>
+    <div class="erp_footer">
+        <div id="erpfooter">
+            <p>版权所有©2016-2017 沐田园丁（北京）文化交流中心</p>
+        </div>
+    </div>
+
+    <!--修改密码-->
+    <div class="PopLayer">
+        <div class="bgdiv" style="z-index:9999; display:none;"></div>
+        <div class="PopLayer-conw PopLayer-posa1 w500" style="z-index:10000; display:none;" id="password-pp">
+            <h4 class="modal-title">修改密码<i class="fa fa-remove posab-abs posab-r10 posab-t14 cup" id="password-close"></i></h4>
+            <form class="regForm" method="post" action="">
+                <div class="modal-body">
+                    <table cellpadding="3px" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td class="text-al-r">账号：</td>
+                                <td>
+                                    <div class="control-input-w1 w300 pos-rel">
+                                        <input type="text" name="account" class="Change-pa-input" placeholder="请输入用户名" value="">
+                                        <label class="error"><em class="tip-arrow tip-arrow-top"></em>请输入用户名<em class="tip-arrow-close"></em></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-al-r">原密码：</td>
+                                <td>
+                                    <div class="control-input-w1 w300 pos-rel">
+                                        <input type="password" name="oldpassword" class="Change-pa-input" placeholder="请输入原密码" value="">
+                                        <label class="error"><em class="tip-arrow tip-arrow-top"></em>密码不能少于6位<em class="tip-arrow-close"></em></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-al-r">新密码：</td>
+                                <td>
+                                    <div class="control-input-w1 w300 pos-rel">
+                                        <input type="password" name="newpassword" class="Change-pa-input" placeholder="请输入新密码" value="">
+                                        <label class="error"><em class="tip-arrow tip-arrow-top"></em>密码不能少于6位<em class="tip-arrow-close"></em></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-al-r">确认新密码：</td>
+                                <td>
+                                    <div class="control-input-w1 w300 pos-rel">
+                                        <input type="password" name="newpassword2" class="Change-pa-input" placeholder="请再次输入新密码" value="">
+                                        <label class="error"><em class="tip-arrow tip-arrow-top"></em>前后两次密码不一致<em class="tip-arrow-close"></em></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer text-al-r">
+                    <button type="submit" class="form-btn-default btn-bg-337">确定</button>
+                    <button type="button" class="form-btn-default ml10" id="password-cancel">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--end-->
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv=Expires content=0>
+	<meta http-equiv=Pragma content=no-cache>
+	<meta http-equiv=Cache-control content=no-cache>
+	<meta http-equiv=Cache content=no-cache>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name=format-detection content="telephone=no">
+	<title>我们自己的店</title>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				type: "POST",
+				url: "index.do",
+				success: function(json){
+					retValue = JSON.parse(json);
+					img_parse();
+				}
+			});
+		});
+		
+		function test(){
+			alert("单击了工具栏，跳转开发中，稍安勿躁...");
+		}
+		
+		function img_parse(){
+			$("div.box").append( "<ul class='index'>" );
+			
+			for( var i = 0; i < retValue.length; ++i ){
+				var id = retValue[i].prod_id;
+				var imgArray = JSON.parse(retValue[i].img);
+				var sp = retValue[i].sp;
+				var cp = retValue[i].cp;
+				
+				for( var j = 0; j < imgArray.length; ++j ){
+					$("ul.index").append("<li class=index" + i + ">");
+					$("li.index" + i).append("<a href = item.html?id=" + id + "><img src=" + imgArray[j].img + " width='100%' height='100%'/></a>");
+					break;
+				}
+			}
+			
+		}
+		
+		$(function(){
+			$.ajax({
+				type: "POST",
+				url: "menu.do",
+				success: function(jsonMenu){
+					retMenu = JSON.parse(jsonMenu);
+					//alert(jsonMenu);
+					menu_parse();
+				}
+			});
+		});
+		function menu_parse(){
+			$("div.toolbar").append( "<ul class='menu'>" );
+			
+			for( var i = 0; i < retMenu.length; ++i ){
+				var menuArray = retMenu[i].class;
+				for( var j = 0; j < menuArray.length; ++j ){
+					$("ul.menu").append("<li class=menu" + i + " style=width:" + 100/retMenu.length + "%>");
+					$("li.menu" + i).append("<div class=tooldiv" + i + ">");
+					$("div.tooldiv" + i).append("<a href = " + menuArray[j].link + ">" + menuArray[j].name + "</a>");
+					break;
+				}
+			}
+		}
+
+	</script>
+	<style>
+		*{ 
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width:100%;
+		}
+		.toolbar{
+			width:100%;
+			height:80px;
+			background:#fff;
+			position:fixed;
+			bottom:0;
+			left:0;
+		}
+		.toolbar ul li{
+			list-style:none;
+			float:left;
+			font-size:20px;
+		}
+		
+		.toolbar ul li a{
+			text-decoration:none;
+			color:#666;
+		}
+		.toolbar ul li div{
+			line-height:80px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="toolbar"></div>
+</body>
+</html>
