@@ -1,8 +1,15 @@
 package com.freeweb.data.user_detail;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 public class UserDetailInfoDaoImpl extends JdbcDaoSupport implements UserDetailInfoDao {
 	@Override
@@ -30,14 +37,29 @@ public class UserDetailInfoDaoImpl extends JdbcDaoSupport implements UserDetailI
 	}
 	
 	@Override
+	public List<UserDetailInfoEntity> find_by_nick(String name) {
+		String sql = "SELECT * FROM `freeweb`.`user_detail_info` WHERE nick_name=?";
+		return this.getJdbcTemplate().query(sql, new Object[]{name}, new UserDetailInfoMapper());
+	}
+	
+	@Override
 	public List<UserDetailInfoEntity> find_all() {
 		String sql = "SELECT * FROM `freeweb`.`user_detail_info`";
 		return this.getJdbcTemplate().query(sql, new UserDetailInfoMapper());
 	}
 	
 	@Override
-	public void register(String name) {
-		String sql = "INSERT INTO `freeweb`.`user_detail_info` (nick_name, user_status) VALUES (?, 3)";
-		this.getJdbcTemplate().update(sql, name);
+	public int register(String name) {
+		String sql = "INSERT INTO `freeweb`.`user_detail_info` (nick_name) VALUES (?)";
+	    KeyHolder keyHolder = new GeneratedKeyHolder();
+	    this.getJdbcTemplate().update(
+	    	new PreparedStatementCreator() {
+	    		public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
+	    			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+	    			ps.setString(1, name);
+	    			return ps;
+	    		}
+	    	}, keyHolder);
+	    return keyHolder.getKey().intValue();
 	}
 }

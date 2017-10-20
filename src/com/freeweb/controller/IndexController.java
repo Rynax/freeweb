@@ -140,17 +140,11 @@ public class IndexController {
 				return "";
 			}
 			
-			JSONObject json = new JSONObject();
 			try {
-				json.put("id", prodlist.get(0).get_prod_id());
-				json.put("img", prodlist.get(0).get_prod_mpict());
-				json.put("sp", prodlist.get(0).get_prod_src_price());
-				json.put("cp", prodlist.get(0).get_prod_cur_price());
+				resp.put(prodlist.get(0).toJson());
 			} catch (JSONException e) {
-				return "";
+				System.out.printf("index_init exception: %s\n", e.toString());
 			}
-			
-			resp.put(json);
 		}
 		
 		System.out.printf("%s\n", resp.toString());

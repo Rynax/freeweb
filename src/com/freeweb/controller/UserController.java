@@ -25,7 +25,7 @@ public class UserController {
 		
 		HttpSession session = request.getSession(false);
 		if(session == null) {
-			return "{\"code\":\"1\",\"desc\":\"请登录\",\"url\":\"login.html\"}";
+			return "{\"code\":\"2\",\"desc\":\"请登录\",\"url\":\"login.html\"}";
 		}
 		
 		List<UserDetailInfoEntity> list = null;

@@ -30,7 +30,10 @@
 				type: "POST",
 				url: "user.do",
 				success: function(json){
-					alert(json);
+					retValue = JSON.parse(json);
+					if(retValue.code == "2") {
+	    				window.location.href = retValue.url;
+	    			}
 				}
 			});
 		});

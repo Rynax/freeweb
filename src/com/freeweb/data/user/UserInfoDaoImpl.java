@@ -7,8 +7,8 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 public class UserInfoDaoImpl extends JdbcDaoSupport implements UserInfoDao {
 	@Override
 	public void add(UserInfoEntity p) {
-		String sql = "INSERT INTO `freeweb`.`user_info` VALUES(null, ?, ?, ?)";
-		this.getJdbcTemplate().update(sql, p.get_login_name(), p.get_login_pwd(), p.get_account_status());
+		String sql = "INSERT INTO `freeweb`.`user_info` VALUES(?, ?, ?, ?)";
+		this.getJdbcTemplate().update(sql, p.get_user_id(), p.get_login_name(), p.get_login_pwd(), p.get_account_status());
 	}
 	
 	@Override

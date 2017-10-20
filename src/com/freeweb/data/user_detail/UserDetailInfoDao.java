@@ -7,6 +7,7 @@ public interface UserDetailInfoDao {
 	public void update(UserDetailInfoEntity p);
 	public void delete(UserDetailInfoEntity p);
 	public List<UserDetailInfoEntity> find_by_id(int id);
+	public List<UserDetailInfoEntity> find_by_nick(String name);
 	public List<UserDetailInfoEntity> find_all();
-	public void register(String name);
+	public int register(String name);
 }
